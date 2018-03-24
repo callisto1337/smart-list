@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smart List</title>
+
+    <link rel="stylesheet" href="./public/css/index.css">
+</head>
+<body>
+
+<div id="app">
+    <h1>Smart List</h1>
+    <input type="text" v-model="new_task">
+    <input type="button" v-on:click="pushTask" value="Сохранить">
+    <ul>
+        <li v-for="item in list">
+            {{ item.text }}
+        </li>
+    </ul>
+</div>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./public/js/index.js"></script>
+</body>
+</html>
