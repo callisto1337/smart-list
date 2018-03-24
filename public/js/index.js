@@ -12,15 +12,18 @@ let app = new Vue({
     el: '#app',
     data: {
         new_task: '',
-        list: storage.getData()
+        list: storage.getData(),
+        active_tasks: storage.getData().length
     },
     methods: {
         pushTask: function() {
-            this.list.push({
-                text: this.new_task
-            });
-            this.new_task = '';
-            storage.saveData(this.list);
+            if (this.new_task) {
+                this.list.push({
+                    text: this.new_task
+                });
+                this.new_task = '';
+                storage.saveData(this.list);
+            }
         }
     }
 })

@@ -6,19 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Smart List</title>
 
-    <link rel="stylesheet" href="./public/css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
-<div id="app">
-    <h1>Smart List</h1>
-    <input type="text" v-model="new_task">
-    <input type="button" v-on:click="pushTask" value="Сохранить">
-    <ul>
-        <li v-for="item in list">
-            {{ item.text }}
-        </li>
-    </ul>
+<div class="container">
+    <div id="app" class="col-lg-6 col-md-9 col-12 m-auto">
+        <h1 class="text-center mt-3">Smart List</h1>
+        <form v-on:submit.prevent="pushTask" action="post">
+            <input v-model="new_task" class="form-control mt-4" type="text">
+        </form>
+        <p class="my-2">Активных задач: <span class="badge badge-primary"> 
+            {{ list.length }}
+        </span></p>
+        <ol class="mt-2">
+            <li v-for="item in list">
+                {{ item.text }}
+            </li>
+        </ol>
+    </div>
 </div>
     
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
