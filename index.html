@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +19,11 @@
         <p class="my-2">Активных задач: <span class="badge badge-primary"> 
             {{ list.length }}
         </span></p>
-        <ol class="mt-2">
-            <li v-for="item in list">
+        <div class="mt-3 form-row">
+            <span v-for="item in list" class="badge badge-secondary mx-1 btn">
                 {{ item.text }}
-            </li>
-        </ol>
+            </span>
+        </div>
     </div>
 </div>
     

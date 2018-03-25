@@ -12,8 +12,7 @@ let app = new Vue({
     el: '#app',
     data: {
         new_task: '',
-        list: storage.getData(),
-        active_tasks: storage.getData().length
+        list: storage.getData()
     },
     methods: {
         pushTask: function() {
