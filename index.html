@@ -19,8 +19,8 @@
         {{ list.length }}
     </span></p>
     <div class="mt-2 form-row">
-        <span v-for="item in list" v-on:click="deleteTask(item.id)" :key="item.id" class="badge badge-pill badge-info m-1 btn">
-                {{ item.text }}
+        <span v-for="(item, key) in list" v-on:click="deleteTask(key)" :key="key" class="badge badge-pill badge-info m-1 btn">
+                {{ item.id }} - {{ item.text }}
         </span>
     </div>
 </div>
