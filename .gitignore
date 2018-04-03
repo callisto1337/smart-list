@@ -2,4 +2,7 @@
 .idea/
 
 # Dependences
-.node_modules/
+node_modules/
+
+# Public
+public/js/

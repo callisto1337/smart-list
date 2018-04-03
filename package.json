@@ -1,0 +1,26 @@
+{
+  "name": "smart-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server -d --open",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callisto1337/smart-list.git"
+  },
+  "author": "Mikhail Lamotkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callisto1337/smart-list/issues"
+  },
+  "homepage": "https://github.com/callisto1337/smart-list#readme"
+}
