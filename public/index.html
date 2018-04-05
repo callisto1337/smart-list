@@ -15,8 +15,11 @@
 
 <div id="app" class="col-lg-6 col-md-8 m-auto">
     <h1 class="text-center mt-3">Smart List</h1>
-    <form v-on:submit.prevent="pushTask" action="post">
-        <input v-model="new_task" class="form-control mt-3" type="text" maxlength="30">
+    <form v-on:submit.prevent="pushTask" action="post" class="input-group mt-3">
+        <input v-model="new_task" class="form-control" type="text" maxlength="30" id="input">
+        <div class="input-group-append">
+            <input class="btn btn-outline-info" type="submit" value="Добавить">
+        </div>
     </form>
     <p class="mt-2 m-0">
         Активных задач: 
@@ -33,6 +36,11 @@
             {{ item }}
         </span>
     </div>
+    <footer class="bg-light fixed-bottom">
+        <div class="col-lg-6 col-md-8 m-auto">
+            <p class="my-3 text-center text-muted">© 2018, Smart-List</p>
+        </div>
+    </footer>
 </div>
     
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
