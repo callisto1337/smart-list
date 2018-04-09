@@ -18,7 +18,7 @@
     <form v-on:submit.prevent="pushTask" action="post" class="input-group mt-3">
         <input v-model="new_task" class="form-control" type="text" maxlength="30" id="input">
         <div class="input-group-append">
-            <input class="btn btn-outline-info" type="submit" value="Добавить">
+            <input class="btn btn-outline-info" type="submit" value="+">
         </div>
     </form>
     <p class="mt-2 m-0">
@@ -43,7 +43,7 @@
     </footer>
 </div>
     
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="./js/index.js"></script>
 </body>
 </html>
