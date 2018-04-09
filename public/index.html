@@ -16,7 +16,7 @@
 <div id="app" class="col-lg-6 col-md-8 m-auto">
     <h1 class="text-center mt-3">Smart List</h1>
     <form v-on:submit.prevent="pushTask" action="post" class="input-group mt-3">
-        <input v-model="new_task" class="form-control" type="text" maxlength="30" id="input">
+        <input v-model="new_task" class="form-control" type="text" maxlength="30" id="input" autocomplete="off">
         <div class="input-group-append">
             <input class="btn btn-outline-info" type="submit" value="+">
         </div>
