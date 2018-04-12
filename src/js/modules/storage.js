@@ -1,9 +1,8 @@
 const storage = {
-    data: JSON.parse(localStorage.getItem(`data`)),
-    getData: function() {
-        return this.data !== null ? this.data : [];
+    get data() {
+        return JSON.parse(localStorage.getItem(`data`)) || [];
     },
-    saveData: function(items) {
+    set data(items) {
         localStorage.setItem(`data`, JSON.stringify(items));
     }
 };

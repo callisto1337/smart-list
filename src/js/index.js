@@ -4,7 +4,7 @@ const app = new Vue({
     el: `#app`,
     data: {
         new_task: ``,
-        list: storage.getData(),
+        list: storage.data,
         listSelected: []
     },
     methods: {
@@ -15,7 +15,7 @@ const app = new Vue({
 
             this.list.push(this.new_task);
             this.new_task = ``;
-            storage.saveData(this.list);
+            storage.data = this.list;
         },
         selectTask: function(item) {
             const selected = this.listSelected;
@@ -27,13 +27,11 @@ const app = new Vue({
             selected.splice(selected.indexOf(item), 1);
         },
         deleteTasks: function() {
-            this.list = this.list.filter(function(item) {
-                if (this.listSelected.indexOf(item) === -1) {
-                    return item;
-                }
-            }, this);
+            this.list = this.list.filter((item) => {
+              return this.listSelected.indexOf(item) === -1
+            });
 
-            storage.saveData(this.list);
+            storage.data = this.list;
             this.listSelected = [];
         }
     }
