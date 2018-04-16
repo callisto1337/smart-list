@@ -3,22 +3,26 @@ import storage from './modules/storage';
 const app = new Vue({
     el: `#app`,
     data: {
-        new_task: ``,
-        list: storage.data,
-        listSelected: []
+        newTask: ``,
+        tasks: storage.data,
+        selectedTasks: []
+    },
+    watch: {
+		tasks: function() {
+			storage.data = this.tasks;
+		}
     },
     methods: {
         pushTask: function() {
-            if (!this.new_task || this.list.indexOf(this.new_task) > -1) {
+            if (!this.newTask || this.tasks.indexOf(this.newTask) > -1) {
                 return;
             }
 
-            this.list.push(this.new_task);
-            this.new_task = ``;
-            storage.data = this.list;
+            this.tasks.push(this.newTask);
+            this.newTask = ``;
         },
         selectTask: function(item) {
-            const selected = this.listSelected;
+            const selected = this.selectedTasks;
 
             if (selected.indexOf(item) === -1) {
                 selected.push(item);
@@ -27,12 +31,11 @@ const app = new Vue({
             selected.splice(selected.indexOf(item), 1);
         },
         deleteTasks: function() {
-            this.list = this.list.filter((item) => {
-              return this.listSelected.indexOf(item) === -1
+            this.tasks = this.tasks.filter((item) => {
+              return this.selectedTasks.indexOf(item) === -1
             });
 
-            storage.data = this.list;
-            this.listSelected = [];
+            this.selectedTasks = [];
         }
     }
 });
