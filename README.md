@@ -2,4 +2,4 @@
 
 Персональный список задач.
 
-http://lamotkin.ru/smart-list/
+smart-list.lamotkin.ru
