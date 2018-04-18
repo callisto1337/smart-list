@@ -1,6 +1,7 @@
 import Vue from 'vue/dist/vue.min';
 import storage from '../modules/storage';
 
+
 export default Vue.component(`list`, {
   data: function() {
     return {
