@@ -1,17 +1,21 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './src/js/main.js',
   output: {
     path: path.resolve(__dirname, 'public/js'),
     publicPath: '/js/',
-    filename: 'index.js',
+    filename: 'main.js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'public')
   },
   module: {
     rules: [
+			{
+				test: /\.vue$/,
+				loader: 'vue-loader'
+			},
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -23,5 +27,11 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+	resolve: {
+		alias: {
+			'vue$': 'vue/dist/vue.esm.js'
+		},
+		extensions: ['*', '.js', '.vue', '.json']
+	}
 };
