@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/callisto1337/smart-list/issues"
   },
-  "homepage": "https://github.com/callisto1337/smart-list#readme"
+  "homepage": "https://github.com/callisto1337/smart-list#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
