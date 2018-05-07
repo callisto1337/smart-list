@@ -13,6 +13,14 @@
 		name: 'App',
 		components: {
 			Header: Header
-		}
+		},
+		beforeMount: function () {
+			this.isAuthorized();
+		},
+		methods: {
+			isAuthorized: function() {
+				fetch('/auth').then(response => console.log(response.text()));
+			}
+    }
 	}
 </script>

@@ -7,6 +7,9 @@ app.use(express.static('../public'));
 app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname, '../public/index.html'));
 });
-app.listen(8000);
+app.get('/auth', function (req, res) {
+	res.send(`test`);
+});
 
-console.log('Server running at http://127.0.0.1:8000/');
+app.listen(80);
+console.log('Server running at http://localhost/');
