@@ -9,12 +9,11 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-		port: 8080,
+		port: 8081,
 		compress: true,
 		proxy: {
 			"/auth": {
-				target: "http://localhost:80",
-				changeOrigin: true
+				target: "http://localhost:8080"
 			},
 		}
   },

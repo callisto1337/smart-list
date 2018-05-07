@@ -11,5 +11,5 @@ app.get('/auth', function (req, res) {
 	res.send(`test`);
 });
 
-app.listen(80);
-console.log('Server running at http://localhost/');
+app.listen(8080);
+console.log('Server running at http://localhost:8080/');
