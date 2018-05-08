@@ -1,5 +1,5 @@
 {
-  "name": "smart-list",
+  "name": "smarty",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/callisto1337/smart-list.git"
+    "url": "git+https://github.com/callisto1337/smarty.git"
   },
   "author": "Mikhail Lamotkin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/callisto1337/smart-list/issues"
+    "url": "https://github.com/callisto1337/smarty/issues"
   },
-  "homepage": "https://github.com/callisto1337/smart-list#readme",
+  "homepage": "https://github.com/callisto1337/smarty#readme",
   "dependencies": {
     "express": "^4.16.3",
     "passport": "^0.4.0",
