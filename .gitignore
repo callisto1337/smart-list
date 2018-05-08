@@ -9,3 +9,6 @@ public/js/
 
 # NPM
 package-lock.json
+
+# Backend config
+backend/config/index.js
