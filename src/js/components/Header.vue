@@ -4,7 +4,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<router-link to="/" class="nav-link">Главная</router-link>
+						<router-link to="/" class="nav-link">Smarty</router-link>
 					</li>
 				</ul>
 				<ul class="navbar-nav ml-auto">
