@@ -1,5 +1,5 @@
-# Smart-List
+# Smarty
 
 Персональный список задач.
 
-http://smart-list.lamotkin.ru
+http://smarty.lamotkin.ru
