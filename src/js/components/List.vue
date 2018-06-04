@@ -52,7 +52,6 @@
 				this.tasks.push(this.newTask);
 				this.newTask = ``;
 			},
-
 			selectTask: function (item) {
 				const selected = this.selectedTasks;
 
