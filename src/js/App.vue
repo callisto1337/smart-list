@@ -1,6 +1,6 @@
 <template>
-  <div v-if="loading" class="text-center mt-5">
-    <h1>Loading...</h1>
+  <div v-if="loading" class="text-center mt-5 pt-5">
+    <h3>Loading...</h3>
   </div>
   <div v-else>
     <Header :authStatus="authStatus" />

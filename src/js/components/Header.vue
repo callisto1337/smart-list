@@ -23,7 +23,8 @@
 	export default {
 		props: ['authStatus'],
 		methods: {
-			logOut: function() {
+			logOut: function(e) {
+				e.preventDefault();
 				App.methods.logOut();
 			}
 		}

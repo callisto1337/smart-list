@@ -1,6 +1,6 @@
 <template>
   <div class="col-lg-6 col-md-8 m-auto">
-    <h1 class="text-center mt-3">Smarty</h1>
+    <h1 class="text-center mt-5">Smarty</h1>
     <form v-on:submit.prevent="pushTask" class="input-group mt-3">
       <input v-model.trim="newTask" class="form-control" type="text" maxlength="30" id="input" autocomplete="off">
       <div class="input-group-append">

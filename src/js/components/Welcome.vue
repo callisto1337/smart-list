@@ -1,7 +1,7 @@
 <template>
     <div class="col-lg-6 col-md-8 m-auto">
-        <h1 class="text-center mt-3">Добро пожаловать в Smarty!</h1>
-        <h3 class="text-center mt-3">Простой и удобный список заметок</h3>
+        <h1 class="text-center mt-5">Добро пожаловать в Smarty!</h1>
+        <h2 class="h4 text-center mt-2">Простой и удобный список заметок</h2>
         <div class="mt-5 text-center">
             <button class="btn btn-primary mr-1" style="background: #db4437" @click="logIn">Войти с Google</button>
         </div>
