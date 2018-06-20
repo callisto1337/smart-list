@@ -1,30 +1,19 @@
 <template>
   <div>
-    <Header/>
-    <<Welcome/>
-    <Footer/>
+    <List v-if="authStatus"/>
+    <Welcome v-else/>
   </div>
 </template>
 
 <script>
-	import Header from '../components/Header';
-	import Footer from '../components/Footer';
 	import Welcome from '../components/Welcome';
+	import List from '../components/List';
 
 	export default {
-		name: 'App',
+		props: [`authStatus`],
 		components: {
-			Header,
-			Footer,
-			Welcome
-		},
-		beforeMount: function () {
-			this.isAuthorized();
-		},
-		methods: {
-			isAuthorized: function() {
-				// fetch('/auth').then(response => console.log(response.text()));
-			}
+			Welcome,
+      List
 		}
 	}
 </script>

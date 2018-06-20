@@ -8,14 +8,7 @@ module.exports = {
     filename: 'main.js',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-		port: 8081,
-		compress: true,
-		proxy: {
-			"/auth": {
-				target: "http://localhost:8080"
-			},
-		}
+    contentBase: path.join(__dirname, 'public')
   },
   module: {
     rules: [

@@ -7,12 +7,25 @@
 						<a href="/" class="nav-link">Smarty</a>
 					</li>
 				</ul>
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav ml-auto" v-if="authStatus">
 					<li class="nav-item">
-						<a href="#" class="nav-link">Выход</a>
+						<a href="#" class="nav-link" @click="logOut">Выход</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 </template>
+
+<script>
+	import App from '../App';
+
+	export default {
+		props: ['authStatus'],
+		methods: {
+			logOut: function() {
+				App.methods.logOut();
+			}
+		}
+	}
+</script>
