@@ -30,10 +30,5 @@
   "bugs": {
     "url": "https://github.com/callisto1337/smarty/issues"
   },
-  "homepage": "https://github.com/callisto1337/smarty#readme",
-  "dependencies": {
-    "express": "^4.16.3",
-    "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
-  }
+  "homepage": "https://github.com/callisto1337/smarty#readme"
 }
