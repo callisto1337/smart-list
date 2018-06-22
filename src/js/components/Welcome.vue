@@ -9,13 +9,13 @@
 </template>
 
 <script>
-	import App from '../App';
+		import App from '../App';
 
-	export default {
-		methods: {
-			logIn: function() {
-				App.methods.logIn();
-			}
-    }
-	}
+		export default {
+				methods: {
+						logIn: function () {
+								App.methods.logIn();
+						}
+				}
+		}
 </script>

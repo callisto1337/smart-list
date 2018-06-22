@@ -4,7 +4,7 @@
     </div>
     <div v-else>
         <Header :authStatus="authStatus"/>
-        <MainPage :authStatus="authStatus"/>
+        <MainPage :authStatus="authStatus" :storage="storage"/>
         <Footer/>
     </div>
 </template>
@@ -28,7 +28,8 @@
             return {
                 userData: null,
                 authStatus: false,
-                loading: true
+                loading: true,
+                storage: null
             }
         },
         beforeCreate() {
@@ -36,10 +37,19 @@
 
             firebase.auth().onAuthStateChanged((user) => {
                 if (user) {
-                    this.userData = user;
+		                console.log(user);
+		                this.userData = user;
                     this.authStatus = true;
+                    const storage = firebase.database().ref("users");
+
+		                storage.on("value", (snapshot) => {
+				                this.storage = snapshot.val();
+				                this.loading = false;
+		                });
+
+		                return;
                 }
-                this.loading = false;
+		            this.loading = false;
             })
         },
         methods: {

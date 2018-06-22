@@ -1,6 +1,6 @@
 <template>
   <div>
-    <List v-if="authStatus"/>
+    <List v-if="authStatus" :storage="storage"/>
     <Welcome v-else/>
   </div>
 </template>
@@ -10,7 +10,7 @@
 	import List from '../components/List';
 
 	export default {
-		props: [`authStatus`],
+		props: [`authStatus`, `storage`],
 		components: {
 			Welcome,
       List
