@@ -9,12 +9,11 @@
 </template>
 
 <script>
-	import App from '../App';
-
 	export default {
 		methods: {
-			logIn: function() {
-				App.methods.logIn();
+			logIn: function(e) {
+			    e.preventDefault();
+				this.$store.dispatch(`logIn`);
 			}
     }
 	}

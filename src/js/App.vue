@@ -1,55 +1,47 @@
 <template>
-  <div v-if="loading" class="text-center mt-5 pt-5">
-    <h3>Loading...</h3>
-  </div>
-  <div v-else>
-    <Header :authStatus="authStatus" />
-    <MainPage :authStatus="authStatus" />
-    <Footer/>
-  </div>
+    <div>
+        <transition name="fade">
+            <div v-if="loading" style="position: absolute; width: 100%; height: 100%; z-index: 5; background: #fff">
+                <h3 class="text-center mt-5 pt-5">Loading...</h3>
+            </div>
+        </transition>
+        <div>
+            <Header/>
+            <MainPage/>
+            <Footer/>
+        </div>
+    </div>
 </template>
 
 <script>
-  import MainPage from './pages/MainPage';
-	import Header from './components/Header';
-	import Footer from './components/Footer';
-	import firebase from 'firebase/app';
-	import config from './config/config';
-	import * as firebaseui from 'firebaseui';
+    import MainPage from './pages/MainPage';
+    import Header from './components/Header';
+    import Footer from './components/Footer';
+    import store from './store/';
 
-	export default {
-		components: {
-			MainPage,
-			Header,
-			Footer
-		},
-    data() {
-			return {
-				userData: null,
-        authStatus: false,
-        loading: true
-      }
-    },
-		beforeCreate() {
-			firebase.initializeApp(config);
-
-			firebase.auth().onAuthStateChanged((user) => {
-				if (user) {
-					this.userData = user;
-					this.authStatus = true;
+    export default {
+        store,
+        components: {
+            MainPage,
+            Header,
+            Footer
+        },
+        computed: {
+            loading: function() {
+                return this.$store.state.loading;
+            }
+        },
+        beforeMount() {
+            this.$store.dispatch(`initStore`);
         }
-				this.loading = false;
-			})
-		},
-    methods: {
-			logIn() {
-				const provider = new firebase.auth.GoogleAuthProvider();
-				firebase.auth().signInWithRedirect(provider);
-			},
-			logOut() {
-				firebase.auth().signOut();
-				window.location.reload();
-			}
     }
-	}
 </script>
+
+<style>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+        opacity: 0;
+    }
+</style>
