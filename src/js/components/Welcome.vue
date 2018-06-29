@@ -9,12 +9,12 @@
 </template>
 
 <script>
-	export default {
-		methods: {
-			logIn: function(e) {
-			    e.preventDefault();
-				this.$store.dispatch(`logIn`);
-			}
+    export default {
+        methods: {
+            logIn: function (e) {
+                e.preventDefault();
+                this.$store.dispatch(`logIn`);
+            }
+        }
     }
-	}
 </script>
