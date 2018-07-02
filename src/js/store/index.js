@@ -37,7 +37,7 @@ export default new Vuex.Store({
                         const userName = user.email.substr(0, user.email.search(`@`));
                         context.commit(`setUserName`, userName);
 
-                        const tasks = snapshot.val() === null ? [] : snapshot.val()[context.state.userName];
+                        const tasks = snapshot.val() === null ? [] : snapshot.val()[context.state.userName][`lists`].default;
 
                         context.commit(`setTasks`, tasks);
                         context.commit(`toggleAuthStatus`, true);
@@ -48,6 +48,9 @@ export default new Vuex.Store({
                 context.commit(`toggleLoading`);
             });
         },
+        saveTasks: (context) => {
+            firebase.database().ref(`users/${context.state.userName}/lists/default`).set(context.state.tasks);
+        },
         logOut: (context) => {
             firebase.auth().signOut();
             context.commit(`toggleLoading`);
@@ -56,9 +59,6 @@ export default new Vuex.Store({
         logIn: () => {
             const provider = new firebase.auth.GoogleAuthProvider();
             firebase.auth().signInWithRedirect(provider);
-        },
-        saveTasks: (context) => {
-            firebase.database().ref(`users/${context.state.userName}`).set(context.state.tasks);
         }
     }
 });

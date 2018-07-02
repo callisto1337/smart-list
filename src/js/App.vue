@@ -6,7 +6,7 @@
             </div>
         </transition>
         <div>
-            <Header/>
+            <Header v-if="authStatus"/>
             <MainPage/>
             <Footer/>
         </div>
@@ -29,6 +29,9 @@
         computed: {
             loading: function() {
                 return this.$store.state.loading;
+            },
+            authStatus: function() {
+                return this.$store.state.authStatus;
             }
         },
         beforeMount() {

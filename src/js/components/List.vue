@@ -1,14 +1,24 @@
 <template>
     <div class="col-lg-6 col-md-8 m-auto">
         <h1 class="text-center mt-5">Smarty</h1>
-        <form v-on:submit.prevent="pushTask" class="input-group mt-3">
-            <input v-model.trim="newTask" class="form-control" type="text" maxlength="30" id="input" autocomplete="off">
-            <div class="input-group-append">
-                <input class="btn btn-outline-info" type="submit" value="+">
+        <form v-on:submit.prevent="pushTask" class="row mt-3">
+            <div class="col">
+                <div>
+                    <input
+                        v-bind:class="{ 'is-invalid': textError }"
+                        v-model.trim="newTask" class="form-control"
+                        type="text" maxlength="30" autocomplete="off">
+                    <div class="invalid-feedback">
+                        {{ textError }}
+                    </div>
+                </div>
+            </div>
+            <div class="pr-3">
+                <input class="btn btn-info" type="submit" value="+">
             </div>
         </form>
         <p class="mt-2 m-0">
-            Активных задач:
+            Основное:
             <span class="badge badge-info" v-cloak>{{ tasks.length }}</span>
             <span v-if="selectedTasks.length > 0" class="badge badge-primary" v-cloak>{{ selectedTasks.length }}</span>
             <span
@@ -31,7 +41,8 @@
         data: function () {
             return {
                 newTask: ``,
-                selectedTasks: []
+                selectedTasks: [],
+                textError: ``
             }
         },
         computed: {
@@ -47,11 +58,13 @@
         methods: {
             pushTask: function () {
                 if (!this.newTask || this.tasks.indexOf(this.newTask) > -1) {
+                    this.textError = !this.newTask ? `Введите текст заметки!` : `Такая заметка уже существует!`;
                     return;
                 }
 
                 this.$store.state.tasks.push(this.newTask);
                 this.newTask = ``;
+                this.textError = ``;
             },
             selectTask: function (item) {
                 const selected = this.selectedTasks;

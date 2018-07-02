@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="col-lg-6 col-md-8 m-auto">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse row">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a href="/" class="nav-link">Smarty</a>
