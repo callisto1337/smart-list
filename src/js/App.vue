@@ -2,7 +2,7 @@
     <div>
         <transition name="fade">
             <div v-if="loading" style="position: absolute; width: 100%; height: 100%; z-index: 5; background: #fff">
-                <h3 class="text-center mt-5 pt-5">Loading...</h3>
+                <h3 class="text-center mt-5 pt-5">Загрузка...</h3>
             </div>
         </transition>
         <div>
